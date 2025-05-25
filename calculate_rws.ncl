@@ -103,8 +103,8 @@ function cal_rws(u_all, v_all)
         return [/RWS, S1, S2, S3, S4/]
     end
 
-fu = addfile("/public/home/songqh/project/ISM_impact_Antarctic/data/uwnd_jja_200hPa.nc", "r")
-fv = addfile("/public/home/songqh/project/ISM_impact_Antarctic/data/vwnd_jja_200hPa.nc", "r")
+fu = addfile("/public/home/songqh/project/ISM_impact_Antarctica/data/uwnd_jja_200hPa.nc", "r")
+fv = addfile("/public/home/songqh/project/ISM_impact_Antarctica/data/vwnd_jja_200hPa.nc", "r")
 u_all = fu->u  
 v_all = fv->v
 lat = fu->latitude
@@ -116,8 +116,8 @@ s2 = cache[2]
 s3 = cache[3]
 s4 = cache[4]
 
-system("rm -rf /public/home/songqh/project/ISM_impact_Antarctic/data/rws_output.nc")
-fout = addfile("/public/home/songqh/project/ISM_impact_Antarctic/data/rws_output.nc", "c")
+system("rm -rf /public/home/songqh/project/ISM_impact_Antarctica/data/rws_output.nc")
+fout = addfile("/public/home/songqh/project/ISM_impact_Antarctica/data/rws_output.nc", "c")
 
 year = ispan(1979, 2024, 1)
 year!0 = "year"
