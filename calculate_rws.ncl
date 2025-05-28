@@ -1,6 +1,7 @@
 undef("cal_rws")
 ; The function for calculating RWS (Rossby Wave Source) is sourced from: https://github.com/luruia/Tropic_CAA/blob/main/figs6%2B7.ncl
 ; Zhu, Z., Lu, R., Yu, B. et al. A moderator of tropical impacts on climate in Canadian Arctic Archipelago during boreal summer. Nat Commun 15, 8644 (2024). https://doi.org/10.1038/s41467-024-53056-0
+
 function cal_rws(u_all, v_all)     
     local dims,lat,lon,nlat,mlon,uvmsg,dv,vr,uvd,uvdu,uvdv,dv_d,vr_d,dv_clm,vr_clm,uvd_clm, \
             uvdu_clm,uvdv_clm,dv_d_clm,vr_d_clm,f,f_2d,f_3d,abo_vor,abo_vor_clm,dlon,dlat, \
@@ -87,10 +88,10 @@ function cal_rws(u_all, v_all)
         S3 = - uvdu_clm * dvordx_anom - uvdv_clm * dvordy_anom
         S4 = - abo_vor_anom * dv_d_clm
 
-        S1 = S1 * 10^11 ;−v′χ·∇ζ̄ 
-        S2 = S2 * 10^11 ;−ζ̄ ∇·χ′ 
-        S3 = S3 * 10^11 ;−v̄χ·∇ζ′
-        S4 = S4 * 10^11 ;−ζ′∇·v̄χ
+        S1 = S1 * 10^11 ;−v′χ·∇ζ̄�?
+        S2 = S2 * 10^11 ;−ζ̄�?�∇·χ′�??
+        S3 = S3 * 10^11 ;−v̄χ·∇ζ�??
+        S4 = S4 * 10^11 ;−ζ�?�∇·v̄χ
 
         RWS = S1 + S2 + S3 + S4
 
@@ -136,7 +137,7 @@ fout->rws = rws
 s1!0 = "year"
 s1!1 = "lat"
 s1!2 = "lon"
-s1@long_name = "RWS Term S1: −v′χ·∇ζ̄ "
+s1@long_name = "RWS Term S1: −v′χ·∇ζ̄�?"
 s1@units = "10^-11 s-2" 
 s1@_FillValue = s1@_FillValue  
 fout->s1 = s1
@@ -144,7 +145,7 @@ fout->s1 = s1
 s2!0 = "year"
 s2!1 = "lat"
 s2!2 = "lon"
-s2@long_name = "RWS Term S2: −ζ̄ ∇·χ′ "
+s2@long_name = "RWS Term S2: −ζ̄�?�∇·χ′�??"
 s2@units = "10^-11 s-2" 
 s2@_FillValue = s2@_FillValue  
 fout->s2 = s2
@@ -152,7 +153,7 @@ fout->s2 = s2
 s3!0 = "year"
 s3!1 = "lat"
 s3!2 = "lon"
-s3@long_name = "RWS Term S3: −v̄χ·∇ζ′"
+s3@long_name = "RWS Term S3: −v̄χ·∇ζ�??"
 s3@units = "10^-11 s-2" 
 s3@_FillValue = s3@_FillValue  
 fout->s3 = s3
@@ -160,7 +161,7 @@ fout->s3 = s3
 s4!0 = "year"
 s4!1 = "lat"
 s4!2 = "lon"
-s4@long_name = "RWS Term S4: −ζ′∇·v̄χ"
+s4@long_name = "RWS Term S4: −ζ�?�∇·v̄χ"
 s4@units = "10^-11 s-2" 
 s4@_FillValue = s4@_FillValue  
 fout->s4 = s4
